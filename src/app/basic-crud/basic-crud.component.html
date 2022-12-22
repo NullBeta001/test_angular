@@ -1,0 +1,33 @@
+<mat-card class="card">
+  <mat-card-content class="body">
+    <section>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="First name" name="name" [(ngModel)]="name">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Address" name="address" [(ngModel)]="address">
+        <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Phone" name="phone" [(ngModel)]="phone">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-select placeholder="City" [(ngModel)]="city" name="city">
+          <mat-option *ngFor="let city of cities" [value]="city.name">{{ city.name }} - {{ city.state }}
+          </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Age" name="age" [(ngModel)]="age">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)=save()>Save</button>
+    <button mat-raised-button color="warn" (cancel)=cancel()>Cancel</button>
+  </mat-card-actions>
+</mat-card>
